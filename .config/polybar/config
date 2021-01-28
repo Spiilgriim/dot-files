@@ -40,7 +40,7 @@ font-0 = Hack Nerd Font:pixelsize=12:antialias=true;2.5
 font-1 = Hack Nerd Font:style=Regular:pixelsize=16:antialias=true;3
 
 modules-left = i3 
-modules-center = spotify previous playpause next 
+modules-center = mpd spotify previous playpause next 
 modules-right =  audio battery lan wlan date time powermenu
 
 cursor-click = pointer
@@ -300,6 +300,34 @@ hook-0 = echo ""
 ; Playing/paused show song name and artist
 hook-1 = /home/alexandre/.config/polybar/spotify-polybar.sh
 format-foreground-color = ${colors.frost-alt}
+
+[module/mpd]
+type = internal/mpd
+host = localhost
+port = 6610
+
+interval = 1
+
+format-online = <label-song>  <bar-progress> <icon-prev> <icon-stop> <toggle> <icon-next> 
+format-stopped = ""
+format-offline = <label-offline>
+
+label-song = %{F#8fbcbb}ﱘ %artist% - %title%%{F-}
+label-time = %{F#8fbcbb}%elapsed% / %total%%{F-}
+
+label-offline = ""
+
+icon-play = %{F#8fbcbb}契%{F-}
+icon-pause = %{F#8fbcbb}%{F-}
+icon-stop = %{F#8fbcbb}栗%{F-}
+icon-prev = %{F#8fbcbb}玲%{F-}
+icon-next = %{F#8fbcbb}怜%{F-}
+
+
+bar-progress-width = 45
+bar-progress-indicator = %{F#81a1c1}|%{F-}
+bar-progress-fill = %{F#81a1c1}─%{F-}
+bar-progress-empty = %{F#81a1c1}─%{F-}
 
 [settings]
 screenchange-reload = true

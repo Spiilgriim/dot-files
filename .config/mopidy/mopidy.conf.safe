@@ -1,0 +1,29 @@
+[spotify]
+enabled = true
+username = 
+password = 
+client_id = 
+client_secret = 
+bitrate = 320
+allow_cache = true
+allow_network = true
+allow_playlists = true
+
+[m3u]
+playlists_dir = /home/alexandre/Music/playlists/
+
+[file]
+enabled = true
+media_dirs = /home/alexandre/Music
+show_dotfiles = false
+follow_symlinks = false
+
+[mpd]
+enabled = true
+hostname = 127.0.0.1
+port = 6610
+password = 
+max_connections = 20
+connection_timeout = 6610
+zeroconf = Mopidy + Ncmpcpp
+default_playlist_scheme = m3u

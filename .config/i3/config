@@ -18,11 +18,13 @@ bindsym $mod+Shift+k exec alacritty -t 'floating terminal'
 
 # vscode, files, browser, notes shortcuts
 bindsym $mod+g exec alacritty --command ranger ~
-bindsym $mod+Shift+g exec alacritty -t 'floating ranger window' --command ranger ~
+bindsym $mod+Shift+g exec alacritty -t 'floating ranger' --command ranger ~
 bindsym $mod+t exec typora
 bindsym $mod+f exec firefox
 bindsym $mod+Shift+f exec brave
-bindsym $mod+n exec alacritty -t 'notes in vimwiki' --command nvim ~/vimwiki/index.md
+bindsym $mod+n exec alacritty -t 'floating vimwiki' --command nvim ~/vimwiki/index.md
+bindsym $mod+m exec alacritty --command ncmpcpp
+bindsym $mod+Shift+m exec -t 'floating ncmpcpp' alacritty --command ncmpcpp
 
 # Kill focused window
 bindsym $mod+q kill
@@ -124,27 +126,18 @@ bindsym $mod+Shift+Control+Up resize shrink height 1 px or 1
 bindsym $mod+Shift+Control+Right resize grow width 1 px or 1
 
 # mpv music controller bindings
-set $controller ~/Scripts/mpv-controller.sh
-bindsym $mod+Shift+P exec $controller pause
-bindsym $mod+Shift+bracketleft exec $controller prev
-bindsym $mod+Shift+bracketright exec $controller next
-bindsym $mod+Shift+semicolon exec $controller skip -10
-bindsym $mod+Shift+apostrophe exec $controller skip 10
-bindsym $mod+Shift+comma exec $controller skipper -5
-bindsym $mod+Shift+period exec $controller skipper 5
-bindsym $mod+Shift+m exec ~/Scripts/rofi/launch.sh music
-bindsym $mod+Shift+l exec $controller stop
-bindsym $mod+Shift+o exec $controller info
-bindsym $mod+Shift+minus exec $controller vol -10
-bindsym $mod+Shift+equal exec $controller vol 10
+bindsym $mod+Shift+P exec mpc -p 6610 toggle
+bindsym $mod+Shift+bracketleft exec mpc -p 6610 prev
+bindsym $mod+Shift+bracketright exec mpc -p 6610 next
+bindsym $mod+Shift+minus exec mpc -p 6610 vol -10
+bindsym $mod+Shift+equal exec mpc -p 6610 vol 10
 
 # Always float certain windows
 for_window [class="mpv"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="pavucontrol"] floating enable
 for_window [title="notes in vimwiki"] floating enable
-for_window [title="floating terminal"] floating enable
-for_window [title="floating ranger window"] floating enable
+for_window [title="floating"] floating enable
 
 #setup monitors
 bindsym $mod+Mod1+Left move workspace to output left
@@ -176,3 +169,4 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id redshift &
 exec --no-startup-id discocss &
+exec --no-startup-id mopidy &
