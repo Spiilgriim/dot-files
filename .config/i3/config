@@ -31,7 +31,7 @@ bindsym $mod+q kill
 bindsym $mod+space exec ~/Scripts/rofi/launch.sh drun 
 
 # Bind key to betterlockscreen (-git)
-bindsym --release $mod+l exec betterlockscreen -l
+bindsym --release $mod+l exec betterlockscreen -l blur
 
 # Set up screenshots and partial screenshots
 bindsym --release Print exec maim ~/Pictures/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
