@@ -56,14 +56,14 @@
     ### Icons ###
     icon_position = left
     max_icon_size = 128
-    icon_path = /usr/share/icons/Nord-Icon/48x48/status/:/usr/share/icons/Nord-Icon/48x48/devices/:/usr/share/icons/Nord-Icon/48x48/apps
+    icon_path = /usr/share/icons/Nord-Icon/48x48/status/:/usr/share/icons/Nord-Icon/48x48/devices/:/usr/share/icons/Nord-Icon/48x48/apps:/home/alexandre/.icons/Nord-Icon/48x48/apps
 
     ### History ###
     sticky_history = yes
     history_length = 20
 
     ### Misc/Advanced ###
-    dmenu = /usr/bin/urxvt -e fzf:
+    dmenu = /usr/bin/alacritty -e fzf:
     browser = /usr/bin/linkhandler
     always_run_script = false
     title = Dunst
@@ -79,19 +79,19 @@
 
 [qtile]
     appname = Qtile
-    new_icon = /usr/share/icons/Nord-Icon/48x48/apps/python.svg
+    new_icon = /home/alexandre/.icons/Nord-Icon/48x48/apps/python.svg
 
 [pomodoro]
     summary = Pomodoro
-    new_icon = /usr/share/icons/Nord-Icon/48x48/apps/pomodoro-indicator.svg
+    new_icon = /home/alexandre/.icons/Nord-Icon/48x48/apps/pomodoro-indicator.svg
 
 [slack]
     desktop_entry = Slack
-    new_icon = /usr/share/icons/Nord-Icon/48x48/apps/slack.svg
+    new_icon = /home/alexandre/.icons/Nord-Icon/48x48/apps/slack.svg
 
 [dunst_icon]
     appname = dunst
-    new_icon = /usr/share/icons/Nord-Icon/48x48/apps/bell.svg
+    new_icon = /home/alexandre/.icons/Nord-Icon/48x48/apps/bell.svg
 
 [shortcuts]
     close = ctrl+space
