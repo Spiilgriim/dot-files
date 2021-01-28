@@ -24,7 +24,7 @@ bindsym $mod+f exec firefox
 bindsym $mod+Shift+f exec brave
 bindsym $mod+n exec alacritty -t 'floating vimwiki' --command nvim ~/vimwiki/index.md
 bindsym $mod+m exec alacritty --command ncmpcpp
-bindsym $mod+Shift+m exec -t 'floating ncmpcpp' alacritty --command ncmpcpp
+bindsym $mod+Shift+m exec alacritty -t 'floating ncmpcpp' --command ncmpcpp
 
 # Kill focused window
 bindsym $mod+q kill
