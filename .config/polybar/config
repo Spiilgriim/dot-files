@@ -312,7 +312,7 @@ format-online = <label-song>  <bar-progress> <icon-prev> <icon-stop> <toggle> <i
 format-stopped = ""
 format-offline = <label-offline>
 
-label-song = %{F#8fbcbb}ﱘ %artist% - %title%%{F-}
+label-song = %{F#8fbcbb}ﱘ %artist:0:20:...% - %title:0:30:...%%{F-}
 label-time = %{F#8fbcbb}%elapsed% / %total%%{F-}
 
 label-offline = ""
