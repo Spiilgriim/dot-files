@@ -27,3 +27,6 @@ max_connections = 20
 connection_timeout = 6610
 zeroconf = Mopidy + Ncmpcpp
 default_playlist_scheme = m3u
+
+[audio]
+output = tee name=t ! queue ! autoaudiosink t. ! queue ! audio/x-raw,rate=44100,channels=2,format=S16LE ! udpsink host=localhost port=5555
