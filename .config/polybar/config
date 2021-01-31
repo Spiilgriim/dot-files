@@ -333,7 +333,7 @@ icon-prev = %{F#8fbcbb}玲%{F-}
 icon-next = %{F#8fbcbb}怜%{F-}
 
 
-bar-progress-width = 45
+bar-progress-width = 25
 bar-progress-indicator = %{F#81a1c1}|%{F-}
 bar-progress-fill = %{F#81a1c1}─%{F-}
 bar-progress-empty = %{F#81a1c1}─%{F-}
