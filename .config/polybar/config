@@ -25,7 +25,6 @@ height = 40
 radius = 0.0
 
 override-redirect = true
-wm-restack = i3
 enable-ipc = true
 
 background = ${colors.background}
@@ -37,9 +36,11 @@ module-margin-left = 2
 module-margin-right = 1
 
 font-0 = Hack Nerd Font:pixelsize=12:antialias=true;2.5
-font-1 = Hack Nerd Font:style=Regular:pixelsize=16:antialias=true;3
+font-1 = hack nerd font:style=regular:pixelsize=16:antialias=true;3
+font-2 = hack nerd font:style=regular:pixelsize=18:antialias=true;3
+font-3 = hack nerd font:style=regular:pixelsize=20:antialias=true;3
 
-modules-left = i3 
+modules-left = ewmh 
 modules-center = mpd spotify previous playpause next 
 modules-right =  audio battery lan wlan date time powermenu
 
@@ -79,8 +80,8 @@ fuzzy-match = true
 
 ws-icon-default = "  "
 ws-icon-0 = "0;"
-ws-icon-1 = "1;  "
-ws-icon-2 = "2;  "
+ws-icon-1 = "1;%{T3}  %{T-}"
+ws-icon-2 = "2;%{T3}  %{T-}"
 ws-icon-3 = "3;  "
 ws-icon-4 = "4;  "
 ws-icon-5 = "5;  "
@@ -120,30 +121,38 @@ enable-click = true
 enable-scroll = false
 
 icon-default = "  "
-icon-0 = home;
-icon-1 = code;
-icon-2 = web;  
-icon-3 = mail;  
-icon-4 = sns;  
-icon-5 = game;  
-icon-6 = 7;7 
-icon-7 = file;  
-icon-8 = txt; 
-icon-9 = music; 
+icon-0 = "home;%{T3}  %{T-}"
+icon-1 = "code;%{T3}  %{T-}"
+icon-2 = "web;  "
+icon-3 = "mail;  "
+icon-4 = "sns;  "
+icon-5 = "game;  " 
+icon-6 = "7;7"
+icon-7 = "file;  " 
+icon-8 = "txt;  "
+icon-9 = "music;  " 
+
 
 label-active = %icon%
-label-active-foreground = ${colors.primary}
-label-active-underline = ${colors.primary}
+label-active-foreground = ${colors.cyan}
+label-active-background = ${colors.dim_background}
 label-active-padding = 2
-
-label-urgent = %icon%
-label-urgent-foreground = ${colors.alert}
-label-urgent-padding = 2
+label-active-font = 2
 
 label-empty = %icon%
-label-empty-foreground = ${colors.secondary}
-label-empty-padding = 2
+label-empty-foreground = ${colors.dim_foreground}
+label-empty-padding = 0 
+label-empty-font = 2
 
+label-occupied = %icon%
+label-occupied-foreground = ${colors.dim_foreground}
+label-occupied-padding = 0 
+label-occupied-font = 2
+
+label-urgent = %icon%
+label-urgent-foreground = ${colors.white}
+label-urgent-padding = 0 
+label-urgent-font = 2
 
 [module/xmonad]
 type = custom/script
@@ -338,4 +347,5 @@ screenchange-reload = true
 ;pseudo-transparency =true
 
 [global/wm]
-margin-bottom = -40
+; margin-bottom = -40
+margin-top = 0

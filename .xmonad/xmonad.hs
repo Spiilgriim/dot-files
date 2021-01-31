@@ -53,8 +53,8 @@ myWorkspaces    = ["home", "code", "web", "mail", "sns", "game", "music", "file"
 
 -- Border colors for unfocused and focused windows, respectively.
 --
-myNormalBorderColor  = "#282c34"
-myFocusedBorderColor = "#fd3f7a"
+myNormalBorderColor  = "#4c566a"
+myFocusedBorderColor = "#88c0d0"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -63,6 +63,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch a terminal
     [ ((modm , xK_k), spawn $ XMonad.terminal conf)
+
+    , ((modm .|. shiftMask , xK_k), spawn "alacritty -t 'floating terminal'")
 
     -- launch dmenu
     , ((modm,               xK_space     ), spawn "bash ~/Scripts/rofi/launch.sh drun")
@@ -73,20 +75,27 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     , ((modm .|. shiftMask,               xK_f     ), spawn "brave-browser")
 
-    -- launch gmrun
-    , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
+    -- launch mpd
+    , ((modm .|. shiftMask, xK_p     ), spawn "mpc -p 6610 toggle")
+    , ((modm .|. shiftMask, xK_KP_Add     ), spawn "mpc -p 6610 vol 10")
+    , ((modm .|. shiftMask, xK_KP_Subtract     ), spawn "mpc -p 6610 vol -10")
 
     -- toogle polybar
     , ((modm .|. shiftMask, xK_Return),  spawn "bash ~/.config/polybar/toogle.sh")
 
-    -- toogle planner
-    , ((modm, xK_p),  spawn "flatpak run com.github.alainm23.planner")
-
     -- lock screen
-    , ((modm, xK_l),  spawn "betterlockscreen -l")
+    , ((modm, xK_l),  spawn "betterlockscreen -l blur")
 
-    -- start thunar
-    , ((modm, xK_g),  spawn "thunar")
+    -- start ranger
+    , ((modm, xK_g),  spawn "alacritty --command ranger")
+
+    , ((modm .|. shiftMask, xK_g),  spawn "alacritty -t 'floating ranger' --command ranger")
+
+    , ((modm,               xK_n     ), spawn "alacritty -t 'floating vimwiki' --command nvim ~/vimwiki/index.md")
+
+    , ((modm, xK_m),  spawn "alacritty --command ncmpcpp")
+
+    , ((modm .|. shiftMask, xK_m),  spawn "alacritty -t 'floating ncmpcpp' --command ncmpcpp")
 
     -- close focused window
     , ((modm , xK_q     ), kill)
@@ -98,7 +107,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_Tab ), setLayout $ XMonad.layoutHook conf)
 
     -- Resize viewed windows to the correct size
-    , ((modm,               xK_n     ), refresh)
+    , ((modm .|. shiftMask,               xK_n     ), refresh)
 
     -- Move focus to the next window
     , ((modm,               xK_Left     ), windows W.focusDown)
@@ -107,10 +116,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_Right     ), windows W.focusUp  )
 
     -- Move focus to the master window
-    , ((modm,               xK_m     ), windows W.focusMaster  )
-
-    -- Swap the focused window and the master window
-    , ((modm,               xK_Return), windows W.swapMaster)
+    , ((modm,               xK_Return),  windows W.swapMaster  )
 
     -- Swap the focused window with the next window
     , ((modm .|. shiftMask, xK_Left     ), windows W.swapDown  )
@@ -219,7 +225,13 @@ myManageHook = composeAll
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore
     , resource =? "dunst" --> doFloat
-    , resource =? "/home/alexandre/Android/Sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64" --> doFloat]
+    , resource =? "/home/alexandre/Android/Sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64" --> doFloat
+    , resource =? "pavucontrol" --> doFloat
+    , title =? "floating terminal" --> doFloat
+    , title =? "floating ranger" --> doFloat
+    , title =? "floating vimwiki" --> doFloat
+    , title =? "floating ncmpcpp" --> doFloat
+    ]
 
 ------------------------------------------------------------------------
 -- Event handling
@@ -246,8 +258,8 @@ myAddKeys =
     , ("M-S-e", spawn "~/Scripts/rofi/launch.sh powermenu")
 
     , ("<XF86AudioMute>",   spawn "amixer set Master toggle")
-    , ("<XF86AudioLowerVolume>", spawn "amixer set Master 5%- unmute")
-    , ("<XF86AudioRaiseVolume>", spawn "amixer set Master 5%+ unmute")
+    , ("<XF86AudioLowerVolume>", spawn "amixer set Master 2%- unmute")
+    , ("<XF86AudioRaiseVolume>", spawn "amixer set Master 2%+ unmute")
     , ("M-F1", spawn "bash ~/.config/polybar/toogle.sh &")
 
   ]
@@ -261,13 +273,11 @@ myAddKeys =
 --
 -- By default, do nothing.
 myStartupHook = do
-    spawnOnce "xrandr --output eDP-1-1 --auto --left-of HDMI-0 &" 
     spawnOnce "nitrogen --restore &"
-    spawnOnce "compton &"
+    spawnOnce "picom &"
     spawnOnce "dunst &"
     spawnOnce "redshift &"
-    spawnOnce "franz &"
-    spawnOnce "spotifyd &"
+    spawnOnce "mopidy &"
     spawn "bash ~/.config/polybar/launch.sh &"
 
 ------------------------------------------------------------------------

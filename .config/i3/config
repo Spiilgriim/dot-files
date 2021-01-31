@@ -168,5 +168,4 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 # Use URxvt settings from Xresources
 exec_always --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id redshift &
-exec --no-startup-id discocss &
 exec --no-startup-id mopidy &
