@@ -28,6 +28,8 @@ call plug#end()
 
 syntax on
 set nocompatible
+set spell
+set spelllang=en_gb,fr_fr
 filetype plugin on
 " Important!!
 if has('termguicolors')
