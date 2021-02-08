@@ -32,7 +32,7 @@ song_status_format = "{{%a{ - %t}}|{ - %f}{ - %b{ (%y)}}}"
 [library]
 song_library_format = "{{%a - %t}|{%f}}{$R%l}"
 empty_tag_color = "black"
-execute_on_song_change = notify-send -a "Now Playing" -i /home/alexandre/.icons/Nord-Icon/128x128/apps/deepin-music-player.svg "$(mpc -p 6610 --format '%title% \n%artist% - %album%' current)"
+execute_on_song_change = notify-send -a "Now Playing" -i /home/alexandre/.icons/Nord-Icon/128x128/apps/mopidy.png "$(mpc -p 6610 --format '%title% \n%artist% - %album%' current)"
 song_columns_list_format = "(10)[white]{l} (30)[blue]{a} (30)[green]{b} (30)[magenta]{t}"
 
 [browser]

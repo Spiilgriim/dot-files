@@ -39,6 +39,7 @@ fzf
 gcc
 gimp
 git
+git-cola
 gnome-screenshot
 gnu-netcat
 gotop-bin
@@ -70,6 +71,7 @@ make
 mesa-demos
 mopidy
 mopidy-mpd
+mopidy-podcast
 mopidy-spotify
 mpc
 mtools
@@ -117,10 +119,7 @@ rpm-tools
 shotwell
 skypeforlinux-stable-bin
 slack-desktop
-spicetify-cli
-spicetify-themes-git
 spotify
-steam
 sudo
 teams
 texinfo
@@ -145,6 +144,7 @@ ttf-font-awesome
 ttf-sazanami-hanazono
 typora
 unzip
+vlc
 wget
 whalebird-bin
 which
@@ -156,6 +156,5 @@ xmonad-contrib
 xorg-server-xephyr
 xorg-xinit
 xorg-xrandr
-xterm
 zoom
 zsh

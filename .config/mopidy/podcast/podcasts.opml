@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml>
+  <body>
+    <outline text="Thinkerview" type="include" url="https://thinkerview.com/feed/podcast/" />
+    <outline text="BBC Radio Podcast" type="include" url="http://www.bbc.co.uk/podcasts.opml" />
+  </body>
+</opml>
+
