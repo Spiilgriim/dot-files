@@ -69,11 +69,14 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch dmenu
     , ((modm,               xK_space     ), spawn "bash ~/Scripts/rofi/launch.sh drun")
 
+    --switch keyboard layout
+    , ((modm .|. shiftMask ,       xK_space     ), spawn "bash ~/Scripts/kbSwitch.sh")
+
     -- launch firefox
-    , ((modm,               xK_f     ), spawn "firefox")
+    , ((modm,               xK_f     ), spawn "brave")
 
 
-    , ((modm .|. shiftMask,               xK_f     ), spawn "brave-browser")
+    , ((modm .|. shiftMask,               xK_f     ), spawn "firefox")
 
     -- launch mpd
     , ((modm .|. shiftMask, xK_p     ), spawn "mpc -p 6610 toggle")
@@ -86,12 +89,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- lock screen
     , ((modm, xK_l),  spawn "betterlockscreen -l blur")
 
-    -- start ranger
-    , ((modm, xK_g),  spawn "alacritty --command ranger")
-
-    , ((modm .|. shiftMask, xK_g),  spawn "alacritty -t 'floating ranger' --command ranger")
-
-    , ((modm,               xK_n     ), spawn "alacritty -t 'floating vimwiki' --command nvim ~/vimwiki/index.md")
+    , ((modm, xK_g),  spawn "thunar")
 
     , ((modm, xK_m),  spawn "alacritty --command ncmpcpp")
 
@@ -228,7 +226,7 @@ myManageHook = composeAll
     , resource =? "/home/alexandre/Android/Sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64" --> doFloat
     , resource =? "pavucontrol" --> doFloat
     , title =? "floating terminal" --> doFloat
-    , title =? "floating ranger" --> doFloat
+    , className =? "floating thunar" --> doFloat
     , title =? "floating vimwiki" --> doFloat
     , title =? "floating ncmpcpp" --> doFloat
     ]

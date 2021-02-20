@@ -1,7 +1,7 @@
 #!/bin/bash
 
 git add .
-if [$1 == ""] 
+if [ $1 == "" ] 
 then
   git commit -m "$(date +'%c')"
 else
