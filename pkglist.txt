@@ -70,6 +70,7 @@ linux-firmware
 linux-headers
 m4
 make
+man-db
 mesa-demos
 mopidy
 mopidy-mpd
@@ -111,6 +112,7 @@ pulseaudio-alsa
 pulseaudio-bluetooth
 pulseaudio-jack
 python-pip
+python-pyaml
 python2
 python2-pip
 qtile
@@ -161,5 +163,7 @@ xmonad-contrib
 xorg-server-xephyr
 xorg-xinit
 xorg-xrandr
+yarn
 zoom
+zotero
 zsh
