@@ -91,6 +91,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     , ((modm, xK_g),  spawn "thunar")
 
+    , ((modm,               xK_n     ), spawn "alacritty -t 'floating vimwiki' --command nvim ~/vimwiki/index.md")
+
     , ((modm, xK_m),  spawn "alacritty --command ncmpcpp")
 
     , ((modm .|. shiftMask, xK_m),  spawn "alacritty -t 'floating ncmpcpp' --command ncmpcpp")
