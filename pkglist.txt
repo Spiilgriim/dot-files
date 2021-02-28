@@ -15,6 +15,9 @@ biber
 binutils
 bison
 bitwarden-bin
+blueman
+bluez-firmware
+bluez-utils
 brave-bin
 calibre
 chromium
@@ -30,6 +33,7 @@ dunst
 duplicity
 efibootmgr
 element-desktop
+etcher-bin
 exa
 fakeroot
 fd

@@ -278,6 +278,7 @@ myStartupHook = do
     spawnOnce "dunst &"
     spawnOnce "redshift &"
     spawnOnce "mopidy &"
+    spawnOnce "blueman-applet &"
     spawn "bash ~/.config/polybar/launch.sh &"
 
 ------------------------------------------------------------------------
