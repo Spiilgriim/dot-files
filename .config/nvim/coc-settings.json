@@ -1,0 +1,33 @@
+{
+  "suggest.noselect": false,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "json",
+    "css",
+    "Markdown",
+    "html",
+    "md",
+    "yaml",
+    "typescript",
+    "ts",
+    "python",
+    "latex",
+    "java",
+    "c++"
+  ],
+  "clangd.path": "/home/alexandre/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd",
+  "languageserver": {
+    "haskell": {
+      "command": "haskell-language-server-wrapper",
+      "args": ["--lsp"],
+      "rootPatterns": [
+        "*.cabal",
+        "stack.yaml",
+        "cabal.project",
+        "package.yaml",
+        "hie.yaml"
+      ],
+      "filetypes": ["haskell", "lhaskell"]
+    }
+  }
+}
